@@ -19,7 +19,8 @@ namespace EventGridEmulator
             
             try
             {
-                var config = ReadConfigurationFromFile();
+                var configToUse = args.Length > 0 ? args[0] : ConfigFilePath;
+                var config = ReadConfigurationFromFile(configToUse);
 
                 var globalEventQueue = new EventQueue();
                 var consoleLogger = new ConsoleLogger();
@@ -44,9 +45,9 @@ namespace EventGridEmulator
             Console.Read();
         }
 
-        static EmulatorConfiguration ReadConfigurationFromFile()
+        static EmulatorConfiguration ReadConfigurationFromFile(string path)
         {
-            var json = File.ReadAllText(ConfigFilePath);
+            var json = File.ReadAllText(path);
             return JsonConvert.DeserializeObject<EmulatorConfiguration>(json);
         }
     }

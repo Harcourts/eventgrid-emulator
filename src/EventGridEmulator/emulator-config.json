@@ -19,6 +19,10 @@
     {
       "name": "DefaultHttpStrategy",
       "type": "EventGridEmulator.Logic.DispatchStrategies.DefaultHttpStrategy"
+    },
+    {
+      "name": "StorageQueueStrategy",
+      "type": "EventGridEmulator.Logic.DispatchStrategies.StorageQueueStrategy"
     }
   ]
 }

@@ -11,5 +11,7 @@ namespace EventGridEmulator.Contracts
         public DateTime PublishTime { get; set; }
         public DateTime EventTime { get; set; }
         public string Id { get; set; }
+        public string DataVersion { get; set; }
+        public string Metadataversion { get; set; }
     }
 }
